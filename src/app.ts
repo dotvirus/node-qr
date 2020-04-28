@@ -5,7 +5,9 @@ import path from "./path";
 export default () => {
   const app = express();
 
-  app.use(morgan("tiny"));
+  if (process.env.NODE_ENV === "development") {
+    app.use(morgan("tiny"));
+  }
 
   app.get("/", (_req, res) => {
     res.download(path);
