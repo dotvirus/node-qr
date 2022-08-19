@@ -1,16 +1,16 @@
-import express from "express";
-import morgan from "morgan";
+import { App } from "@tinyhttp/app";
+import { logger } from "@tinyhttp/logger";
+import { basename } from "path";
+
 import path from "./path";
 
 export default () => {
-  const app = express();
+  const app = new App();
 
-  if (process.env.NODE_ENV === "development") {
-    app.use(morgan("tiny"));
-  }
+  app.use(logger());
 
-  app.get("/", (_req, res) => {
-    res.download(path);
+  app.get("/", (_, res) => {
+    res.download(path, basename(path));
   });
 
   return app;

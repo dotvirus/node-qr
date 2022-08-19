@@ -1,8 +1,9 @@
 import getPort from "get-port";
+import qrcode from "qrcode-terminal";
+
 import buildApp from "./app";
 import getLocalIp from "./ip";
 import path from "./path";
-const qrcode = require("qrcode-terminal");
 
 (async () => {
   const app = buildApp();

@@ -1,10 +1,10 @@
-import { resolve } from "path";
 import { existsSync } from "fs";
+import { resolve } from "path";
+
 import args from "./args";
 
 function checkFile(filename?: string) {
   if (!filename) {
-    // @ts-ignore
     args.help();
     process.exit(0);
   }
@@ -19,7 +19,8 @@ function checkFile(filename?: string) {
   return path;
 }
 
-const filename = <string>args.file;
+const argv = args.argv;
+const filename = argv.file as string;
 const path = checkFile(filename);
 
 export default path;
