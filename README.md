@@ -6,6 +6,7 @@ Serve files via QR code
 
 ```
 yarn
+yarn build
 ```
 
 ## Run
