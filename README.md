@@ -2,6 +2,12 @@
 
 Serve files via QR code
 
+## Build
+
+```
+yarn
+```
+
 ## Run
 
 ```
